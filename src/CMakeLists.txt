@@ -133,3 +133,5 @@ if (KAFKA STREQUAL "y")
 	)
 endif ()
 
+add_subdirectory(demo)
+

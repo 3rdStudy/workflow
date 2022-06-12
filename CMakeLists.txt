@@ -23,6 +23,8 @@ set(CMAKE_CONFIG_INSTALL_FILE ${PROJECT_BINARY_DIR}/config.toinstall.cmake)
 set(CMAKE_CONFIG_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
 set(INC_DIR ${PROJECT_SOURCE_DIR}/_include CACHE PATH "workflow inc")
 set(LIB_DIR ${PROJECT_SOURCE_DIR}/_lib CACHE PATH "workflow lib")
+set(PROJECT_BINARY_DIR bin)
+set(BINARY_DIR bin)
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${LIB_DIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${LIB_DIR})
@@ -72,6 +74,7 @@ else ()
 endif ()
 
 add_subdirectory(src)
+add_subdirectory(test)
 
 ####CONFIG
 

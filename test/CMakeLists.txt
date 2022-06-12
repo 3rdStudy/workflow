@@ -50,7 +50,7 @@ else ()
 endif ()
 
 foreach(src ${TEST_LIST})
-	add_executable(${src} EXCLUDE_FROM_ALL ${src}.cc)
+	add_executable(${src}  ${src}.cc) # EXCLUDE_FROM_ALL
 	target_link_libraries(${src} ${WORKFLOW_LIB} GTest::GTest GTest::Main)
 	add_test(${src} ${src})
 	add_dependencies(check ${src})
@@ -60,3 +60,5 @@ foreach(src ${TEST_LIST})
 	add_test(${src}-memory-check ${memcheck_command} ./${src})
 endforeach()
 
+add_executable(first_test  first_test.cc) # EXCLUDE_FROM_ALL
+target_link_libraries(first_test ${WORKFLOW_LIB})
